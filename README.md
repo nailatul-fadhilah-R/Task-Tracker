@@ -30,4 +30,8 @@ A simple Command Line Interface (CLI) application to manage your to-do list, bui
 5. **List by status**
    ```bash
    python task_cli.py list done
-   
+
+## Why this works
+- sys.argv: This is a list in Python that contains all the command-line arguments. sys.argv[0] is the script name, sys.argv[1] is the command (like "add"), and so on.
+- JSON Persistence: Every time you run a command, the script reads the current state of tasks.json, modifies the list in memory, and overwrites the file with the new data.
+- Error Handling: I added basic checks to ensure that if you try to update a task ID that doesn't exist, the app won't crash; it will simply tell you the ID wasn't found.
