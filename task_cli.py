@@ -18,8 +18,6 @@ def save_tasks(tasks):
     with open(JSON_FILE, "w") as f:
         json.dump(tasks, f, indent=4)
 
-# --- Features ---
-
 def add_task(description):
     tasks = load_tasks()
     new_id = max([t['id'] for t in tasks], default=0) + 1
